@@ -75,7 +75,7 @@ export default function App() {
       <Nav />
       <div className='headerContainer'>
         <div className='headerTitleContainer'>
-          <Typography variant='h4' className='headerTitleContainerText'>Welcome</Typography>
+          <Typography variant='h3' className='headerTitleContainerText'>Welcome</Typography>
         </div>
         <div className='subHeaderContainer'>
           <div className='subHeaderInformation'>

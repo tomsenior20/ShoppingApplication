@@ -16,10 +16,10 @@ export default function Footer() {
     return(
         <footer className='d-flex flex-row justify-content-between p-1 align-items-center mt-2'>
             <div className='footerNameContainer p-2 mx-3'>
-                <Typography variant='h6' className='my-0 mx-3 fontText'>Powered and Operated by Tom Senior</Typography>
+                <Typography variant='body1' className='my-0 mx-3 fontText'>Powered and Operated by Tom Senior</Typography>
             </div>
             <div className='footerDateStamp p-1 mx-3'>
-                <Typography variant="h6" className='my-0 mx-3 fontText'>{trademarkDate}</Typography>
+                <Typography variant="body1" className='my-0 mx-3 fontText'>{trademarkDate}</Typography>
             </div>
         </footer>
     )

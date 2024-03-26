@@ -1,9 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Nav from 'src/Components/Nav';
-import { Typography } from '@mui/material';
+import Footer from 'src/Components/Footer';
+import { Card, CardContent, CardHeader, Typography , Button} from '@mui/material';
 import 'src/Styling/Pages/Shop.css'
+import AddIcon from '@mui/icons-material/Add';
 
 export default function Shop() {
+    class Product{
+        constructor(Name,Price,Description){
+            this.Name = Name;
+            this.Price = Price;
+            this.Description = Description;
+        }
+    }
+
+    const [products,setProducts] = useState([]);
+    useEffect(()=> {
+        fetchProducts();
+    }, [])
+    function fetchProducts(){
+        fetch("http://localhost:3010/getProducts")
+        .then((response) => {
+            if(!response.ok){
+                console.log("Network is not okay");
+            }
+            return response.json();
+        })
+        .then((data) => {  setProducts(data)})
+        .catch((error) => {console.log("Error fetching Products" + error)});
+    }
+
+    function AddProduct(product){
+        console.log(product);
+    }
     return(
         <div>
             <Nav/>
@@ -14,6 +43,31 @@ export default function Shop() {
                     So Why not start shopping?
                 </Typography>
             </div>
+            <div className='p-4 productMainContainer'>
+                <div className='ProductHeaderContainer p-4 my-3'>
+                    <Typography variant='h4' className='ProductCardHeader my-4 text-center p-3'>Below Are the Avaliable Products</Typography>
+                </div>
+                <div className='productContainer my-2 p-3 d-flex flex-row justify-content-center' style={{ position: 'relative' }}>
+                    {products.filter((canShow) => canShow.showProduct === 1).map((item,key) => (
+                    <Card key={key} className='ProductCard my-3 p-3 m-4'>
+                        <CardHeader className='p-1' title={item.ProductName} />
+                        <CardContent className='p-1'>
+                            <Typography variant='body1' className="my-3">Description: {item.ProductDescription}</Typography>
+                            <Typography variant='body1' className="my-2" value={item.ProductPrice}>Price: £{item.ProductPrice}</Typography>
+                        </CardContent>
+                        <CardContent className='AddButtonContainer p-2'>
+                            <Button variant="contained"
+                            className='AddButton' 
+                            onClick={() => AddProduct(new Product(item.ProductName,item.ProductPrice,item.ProductDescription, ))} 
+                            endIcon={<AddIcon />}>
+                                Add
+                            </Button>
+                        </CardContent>
+                    </Card>
+            ))}
+                </div>
+            </div>
+            <Footer />
         </div>
     )
 }

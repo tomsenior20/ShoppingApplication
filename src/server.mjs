@@ -54,3 +54,19 @@ app.get('/whatsnew', (req, res) => {
         }
     })
 });
+
+
+app.get("/getProducts", (req, res) => {
+    const query = "SELECT pr.ProductName, ProductPrice, ProductDescription, showProduct " +
+        "FROM products pr " +
+        "LEFT JOIN productsShow ps ON pr.ProductName = ps.productName;";
+    con.query(query, (error, success) => {
+        if (error) {
+            console.log("error querying for products" + error);
+            res.status(500).json({ error: "Error querying for products" });
+        } else {
+            res.json(success);
+        }
+    })
+
+})

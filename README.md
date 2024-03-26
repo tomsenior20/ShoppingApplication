@@ -9,3 +9,8 @@ This website has been designed to allow me to learn new skills within Software E
 4) Node.js server
 5) MySQL
 6) MaterialUI
+
+# Important Information Regardling Site Functionalies.
+Showing Products: 
+- Products are stored within the products table.
+- Require the products to be visible by a flag set inside the productShow Table.
