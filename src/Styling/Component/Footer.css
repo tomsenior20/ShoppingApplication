@@ -1,0 +1,15 @@
+footer{
+    background: linear-gradient(140deg, #032e79 30%, #02105b 70%);
+}
+
+.fontText{
+    font-size: 20px;
+    margin: 0.5rem 1rem;
+    padding: 1rem 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    word-wrap: break-word;
+}
