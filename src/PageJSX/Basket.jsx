@@ -4,7 +4,7 @@ export default function Offices() {
     return(
         <div>
             <Nav />
-            <p>Offices</p>
+            <p>Basket</p>
         </div>
     )
 }

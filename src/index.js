@@ -8,7 +8,7 @@ import './Styling/Pages/App.css';
 // Pages Styling
 import Home from './PageJSX/App.jsx';
 import About from './PageJSX/About.jsx';
-import Offices from './PageJSX/Offices.jsx';
+import Basket from './PageJSX/Basket.jsx';
 import Shop from './PageJSX/Shop.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,7 +18,7 @@ root.render(
       <Route path="/" element={<Home />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/about" element={<About />} />
-      <Route path="/offices" element={<Offices />} />
+      <Route path="/basket" element={<Basket />} />
     </Routes>
   </Router>
 );

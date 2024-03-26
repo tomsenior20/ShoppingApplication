@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import '../Styling/Component/Navigation.css';
 import { Link, useLocation } from "react-router-dom";
 import { Typography } from '@mui/material';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 export default function Nav() {
     const location = useLocation();
@@ -25,23 +26,30 @@ export default function Nav() {
 
     return (
         <nav>
-            <div className="navigationTitleContainer">
+            <div className="navigationTitleContainer d-flex align-items-center">
                 <Typography variant='h5'>Tom Senior</Typography>
             </div>
             <div className="navigationLinkContainer">
                 {screenWidth > 400 ? (
                     <ul className='m-0'>
-                        <li style={{ display: page === "/" ? "none" : "block"}}>
+                        <li style={{ display: page === "/" ? "none" : "flex"}}>
                             <Link to="/">Home</Link>
                         </li>
-                        <li style={{ display: page === "/shop" ? "none" : "block"}}>
-                            <Link to="/shop">Shop</Link>
+                        <li style={{ display: page === "/shop" ? "none" : "flex"}}>
+                            <Link to="/shop">
+                               <Typography variant='body1'>Shop</Typography>
+                            </Link>
                         </li>
-                        <li style={{ display: page === "/about" ? "none" : "block"}}>
-                            <Link to="/about">About</Link>
+                        <li style={{ display: page === "/about" ? "none" : "flex"}}>
+                            <Link to="/about">
+                                <Typography variant='body1'>About</Typography>
+                            </Link>
                         </li>
-                        <li style={{ display: page === "/offices" ? "none" : "block"}}>
-                            <Link to="/offices">Offices</Link>
+                        <li style={{ display: page === "/basket" ? "none" : "flex"}}>
+                            <Link to="/basket" className='d-flex align-items-center justify-content-center'>
+                                <Typography variant='body1'>Basket</Typography>
+                                <ShoppingBasketIcon className='mx-2'/>
+                            </Link>
                         </li>
                     </ul>
                 ) : (
