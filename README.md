@@ -13,4 +13,5 @@ This website has been designed to allow me to learn new skills within Software E
 # Important Information Regardling Site Functionalies.
 Showing Products: 
 - Products are stored within the products table.
-- Require the products to be visible by a flag set inside the productShow Table.
+- Require the products to be visible by a flag set inside the productShow Table  ( binary bool ) - Without the products will not be visible on the application.
+- Upon clicking the add Function a object is created for the product.
