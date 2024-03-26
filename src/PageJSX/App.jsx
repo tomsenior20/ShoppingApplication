@@ -75,11 +75,11 @@ export default function App() {
       <Nav />
       <div className='headerContainer'>
         <div className='headerTitleContainer'>
-          <Typography variant='h2' className='headerTitleContainerText'>Welcome To Senior Shop</Typography>
+          <Typography variant='h4' className='headerTitleContainerText'>Welcome To Senior Shop</Typography>
         </div>
         <div className='subHeaderContainer'>
           <div className='subHeaderInformation'>
-            <Typography variant="h6" className='headerInformationText'>Below You will be able to navigate to the shopping page</Typography>
+            <Typography variant="h5" className='headerInformationText'>Below You will be able to navigate to the shopping page</Typography>
             <Typography variant='h6' className='headerInformationText'>These items are avaliable for a certain time only.</Typography>
           </div>
         </div>
