@@ -31,7 +31,15 @@ export default function Shop() {
     }
 
     function AddProduct(product){
-        console.log(product);
+        var order = [];
+        order.push(product);
+        if(sessionStorage.getItem("order")){
+            var exisitingOrder = JSON.parse(sessionStorage.getItem("order"));
+            exisitingOrder.push(product);
+            sessionStorage.setItem("order", JSON.stringify(exisitingOrder));
+        } else{ 
+            sessionStorage.setItem("order", JSON.stringify(order));
+        }
     }
     return(
         <div>

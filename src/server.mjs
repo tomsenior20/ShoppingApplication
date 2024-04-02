@@ -68,5 +68,4 @@ app.get("/getProducts", (req, res) => {
             res.json(success);
         }
     })
-
 })

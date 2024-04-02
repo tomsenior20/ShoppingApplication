@@ -1,0 +1,7 @@
+.basketHeaderTitleContainer{
+    background: linear-gradient(140deg, #032e79 30%, #02105b 70%);
+    min-height: 400px;
+}
+.basketTitleHeader,.basketTitleSubHeader{
+    color:white;
+}
