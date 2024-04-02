@@ -7,7 +7,8 @@ import AddIcon from '@mui/icons-material/Add';
 
 export default function Shop() {
     class Product{
-        constructor(Name,Price,Description){
+        constructor(id,Name,Price,Description){
+            this.id = id;
             this.Name = Name;
             this.Price = Price;
             this.Description = Description;
@@ -15,6 +16,8 @@ export default function Shop() {
     }
 
     const [products,setProducts] = useState([]);
+    const [id, setId] = useState(0);
+    
     useEffect(()=> {
         fetchProducts();
     }, [])
@@ -31,12 +34,15 @@ export default function Shop() {
     }
 
     function AddProduct(product){
-        var order = [];
-        order.push(product);
+        const updatedId = id + 1;
+        setId(updatedId);
+        const updatedProduct = new Product(id , product.ProductName, product.ProductPrice, product.ProductDescription);
+        var order = sessionStorage.getItem("order") ? JSON.parse(sessionStorage.getItem("order")) : [];
+        order.push(updatedProduct);
         if(sessionStorage.getItem("order")){
             var exisitingOrder = JSON.parse(sessionStorage.getItem("order"));
-            exisitingOrder.push(product);
-            sessionStorage.setItem("order", JSON.stringify(exisitingOrder));
+            exisitingOrder.push(order);
+            sessionStorage.setItem("order", JSON.stringify(order));
         } else{ 
             sessionStorage.setItem("order", JSON.stringify(order));
         }
@@ -66,7 +72,7 @@ export default function Shop() {
                         <CardContent className='AddButtonContainer p-2'>
                             <Button variant="contained"
                             className='AddButton' 
-                            onClick={() => AddProduct(new Product(item.ProductName,item.ProductPrice,item.ProductDescription, ))} 
+                            onClick={() => AddProduct(item)} 
                             endIcon={<AddIcon />}>
                                 Add
                             </Button>
