@@ -12,19 +12,20 @@
 
 .ProductCard{
     position: relative;
-    background-color: rgba(224, 223, 223, 0.3) !important;
+    background: linear-gradient(100deg, rgba(251, 250, 250, 0.9) 30%, #fbf7f7 70%);
+    box-shadow: 2px 3px rgba(174, 174, 174, 0.4) !important;
     width: 200px;
-    min-height: 250px;
+    min-height: 300px;
 }
 
 .productContainer{
+    background: rgba(218, 217, 217, 0.2);
     position: relative;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.AddButtonContainer{
-    position: absolute;
-    bottom: 0;
-    margin: 2px -5px;
+
+.AddButton{
+    width:75%
 }

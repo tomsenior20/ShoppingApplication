@@ -8,15 +8,19 @@ export default function Nav() {
     const location = useLocation();
     const [screenWidth, setScreenWidth] = useState(0);
     const [page, setPage] = useState("");
-
+    const [orderLength, setOrderLength] = useState(0);
+   
     useEffect(() => {
-        setPage(location.pathname);
 
+        setPage(location.pathname);
+        setOrderLength(JSON.parse(sessionStorage.getItem("order")).length);
         function handleResize() {
             const newScreenWidth = window.innerWidth;
             setScreenWidth(newScreenWidth);
         }
 
+
+        
         window.addEventListener("resize", handleResize);
         handleResize();
         return () => {
@@ -37,7 +41,7 @@ export default function Nav() {
                         </li>
                         <li style={{ display: page === "/shop" ? "none" : "flex"}}>
                             <Link to="/shop">
-                               <Typography variant='body1'>Shop</Typography>
+                                <Typography variant='body1'>Shop</Typography>
                             </Link>
                         </li>
                         <li style={{ display: page === "/about" ? "none" : "flex"}}>
@@ -45,10 +49,13 @@ export default function Nav() {
                                 <Typography variant='body1'>About</Typography>
                             </Link>
                         </li>
-                        <li style={{ display: page === "/basket" ? "none" : "flex"}}>
+                        <li style={{ display: page === "/basket" ? "flex" : "flex"}}>
                             <Link to="/basket" className='d-flex align-items-center justify-content-center'>
-                                <Typography variant='body1'>Basket</Typography>
-                                <ShoppingBasketIcon className='mx-2'/>
+                                <Typography id="basketIcon" variant='body1'>Basket</Typography>
+                                <div class="basketIconContainer">
+                                    <ShoppingBasketIcon className='mx-2'/>
+                                    <div className='m-1 BasketNumberContainer' id="orderLengthNumber">{orderLength}</div>
+                                </div>
                             </Link>
                         </li>
                     </ul>

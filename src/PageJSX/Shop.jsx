@@ -17,7 +17,7 @@ export default function Shop() {
 
     const [products,setProducts] = useState([]);
     const [id, setId] = useState(0);
-    
+
     useEffect(()=> {
         fetchProducts();
     }, [])
@@ -46,9 +46,10 @@ export default function Shop() {
         } else{ 
             sessionStorage.setItem("order", JSON.stringify(order));
         }
+        window.location.reload();
     }
     return(
-        <div>
+        <div className='d-flex flex-column parentContainer'>
             <Nav/>
             <div className='welcomeShopContainer d-flex flex-column justify-content-around px-3 py-2'>
                 <Typography variant="h3" className='welcomeHeader p-4 my-4 text-center'>Welcome To The Shop</Typography>
@@ -57,28 +58,28 @@ export default function Shop() {
                     So Why not start shopping?
                 </Typography>
             </div>
-            <div className='p-4 productMainContainer'>
-                <div className='ProductHeaderContainer p-4 my-3'>
+            <div className='productMainContainer'>
+                <div className='ProductHeaderContainer p-5 my-3'>
                     <Typography variant='h4' className='ProductCardHeader my-4 text-center p-3'>Below Are the Avaliable Products</Typography>
                 </div>
-                <div className='productContainer my-2 p-3 d-flex flex-row justify-content-center' style={{ position: 'relative' }}>
+                <div className='productContainer my-3 p-3 d-flex flex-row justify-content-center align-items-center'>
                     {products.filter((canShow) => canShow.showProduct === 1).map((item,key) => (
-                    <Card key={key} className='ProductCard my-3 p-3 m-4'>
+                    <Card key={key} className='ProductCard m-5 p-2 d-flex flex-column justify-content-between'>
                         <CardHeader className='p-1' title={item.ProductName} />
-                        <CardContent className='p-1'>
+                        <CardContent className='p-1 flex-grow-1 d-flex justify-content-between flex-column'>
                             <Typography variant='body1' className="my-3">Description: {item.ProductDescription}</Typography>
                             <Typography variant='body1' className="my-2" value={item.ProductPrice}>Price: £{item.ProductPrice}</Typography>
                         </CardContent>
-                        <CardContent className='AddButtonContainer p-2'>
-                            <Button variant="contained"
-                            className='AddButton' 
-                            onClick={() => AddProduct(item)} 
-                            endIcon={<AddIcon />}>
-                                Add
-                            </Button>
-                        </CardContent>
-                    </Card>
-            ))}
+                <div className='p-2 d-flex justify-content-start'>
+                    <Button variant="contained"
+                    className='AddButton'
+                    onClick={() => AddProduct(item)} 
+                    endIcon={<AddIcon />}>
+                    Add
+                    </Button>
+                </div>
+            </Card>
+                ))}
                 </div>
             </div>
             <Footer />

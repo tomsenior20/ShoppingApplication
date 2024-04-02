@@ -23,6 +23,7 @@ nav{
 }
 
 .navigationLinkContainer li{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items:center;
@@ -48,4 +49,26 @@ nav{
     .navigationTitleContainer, .navigationTitleContainer{
         width:50%;
     }
+}
+
+
+.basketIconContainer{
+    position: relative;
+}
+.BasketNumberContainer{
+    position: absolute;
+    top: -12px;
+    right: -20px;
+    content: "";
+    background-color: red;
+    aspect-ratio: 1;
+    border-radius: 50% !important;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    -ms-border-radius: 50% !important;
+    -o-border-radius: 50% !important;
 }

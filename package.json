@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "require": "^0.4.4",
+    "source-map-explorer": "^2.5.3",
     "styled-components": "^6.1.8",
     "web-vitals": "^2.1.4"
   },
@@ -29,7 +30,8 @@
     "start-server": "cd src && node server.mjs",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "eslintConfig": {
     "extends": [

@@ -5,3 +5,6 @@
 .basketTitleHeader,.basketTitleSubHeader{
     color:white;
 }
+.basketParentContainer{
+    height:100vh;
+}
