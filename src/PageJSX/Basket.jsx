@@ -16,6 +16,10 @@ export default function Basket() {
             setCurrentOrder(JSON.parse(order));
         }
     },[])
+
+    function removeFromBasket(){
+        console.log(removeFromBasket);
+    }
     return(
         <div>
             <Nav />
@@ -35,7 +39,8 @@ export default function Basket() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {currentOrder.map((item,index) => (
+                        {currentOrder.length > 0 ? ( 
+                            currentOrder.map((item,index) => (
                             <TableRow key={index}>
                                 <TableCell className='text-center'>{item.Name}</TableCell>
                                 <TableCell className='text-center'>{item.Description}</TableCell>
@@ -46,7 +51,11 @@ export default function Basket() {
                                     </Button>
                                 </TableCell>
                             </TableRow>
-                        ))}
+                        ))) :
+                            <TableRow className='text-center p-1'>
+                                <p>No Items are in basket</p>
+                            </TableRow>
+                        }
                     </TableBody>
                 </Table>              
             </TableContainer>
