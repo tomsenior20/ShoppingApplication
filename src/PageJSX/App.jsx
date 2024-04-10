@@ -96,10 +96,10 @@ export default function App() {
       </div>
       <div className='shoppingcartNavContainer py-4 px-2 mx-2 my-4 d-flex flex-row justify-content-center align-items-center'>
         <div className='buttonTextContainer d-flex flex-column justify-content-center align-items-center m-3 p-4'>
-          <Typography variant="h5" className='my-1 p-3'>
-            Click to shop
+          <Typography variant="h5" className='continueShoppingTitle my-1 p-3'>
+            Ready to shop??
           </Typography>
-          <ImportExportIcon className='mx-2'/>
+          <ImportExportIcon className='mx-1 continueShoppingArrowIcon'/>
           <Button variant="outlined" className='shoppingButton btn btn-dark p-3 m-4' component={Link} to="/shop" endIcon={<ShoppingBasketIcon/>}>
             Shopping
           </Button>

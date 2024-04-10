@@ -17,8 +17,8 @@ export default function Basket() {
         }
     },[]);
 
-    function removeFromBasket(removeItem){
-        console.log(removeItem);
+    function removeFromBasket(e,removeItem){
+        e.preventDefault();
         // Get Current Order from storage
         const currentOrder = JSON.parse(sessionStorage.getItem("order"));
         // Filter array based on remove Item clicked
@@ -52,14 +52,14 @@ export default function Basket() {
                                 <TableCell className='text-center'>{item.Description}</TableCell>
                                 <TableCell className='text-center'>£{item.Price}</TableCell>
                                 <TableCell className='text-center'>
-                                    <Button onClick={() => removeFromBasket(item)}>
+                                    <Button onClick={(e) => removeFromBasket(e,item)}>
                                         {<DeleteIcon />}
                                     </Button>
                                 </TableCell>
                             </TableRow>
                         ))) :
-                            <TableRow className='text-center p-1'>
-                                <TableCell>No Items are in basket</TableCell>
+                            <TableRow className='text-center p-1 my-2'>
+                                No Items are in basket
                             </TableRow>
                         }
                     </TableBody>

@@ -150,3 +150,14 @@
 .shoppingButton:hover{
   color:black;
 }
+.continueShoppingTitle{
+  text-decoration: none;
+  border-bottom: 1px solid black;
+}
+
+.continueShoppingArrowIcon{
+  margin: 1rem;
+  width: 2rem;
+  height: 2rem;
+  aspect-ratio: 1/1;
+}

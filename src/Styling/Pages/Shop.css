@@ -16,6 +16,11 @@
     box-shadow: 2px 3px rgba(174, 174, 174, 0.4) !important;
     width: 200px;
     min-height: 300px;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
 }
 
 .productContainer{
@@ -28,4 +33,9 @@
 
 .AddButton{
     width:75%
+}
+
+.productNames{
+    text-align: center;
+    border-bottom: 1px solid black;
 }

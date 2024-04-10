@@ -65,9 +65,9 @@ export default function Shop() {
                 <div className='productContainer my-3 p-3 d-flex flex-row justify-content-center align-items-center'>
                     {products.filter((canShow) => canShow.showProduct === 1).map((item,key) => (
                     <Card key={key} className='ProductCard m-5 p-2 d-flex flex-column justify-content-between'>
-                        <CardHeader className='p-1' title={item.ProductName} />
+                        <CardHeader className='p-1 productNames' title={item.ProductName} />
                         <CardContent className='p-1 flex-grow-1 d-flex justify-content-between flex-column'>
-                            <Typography variant='body1' className="my-3">Description: {item.ProductDescription}</Typography>
+                            <Typography variant='body1 productDesc' className="my-3">Description: {item.ProductDescription}</Typography>
                             <Typography variant='body1' className="my-2" value={item.ProductPrice}>Price: £{item.ProductPrice}</Typography>
                         </CardContent>
                 <div className='p-2 d-flex justify-content-start'>

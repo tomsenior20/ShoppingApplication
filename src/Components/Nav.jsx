@@ -13,7 +13,12 @@ export default function Nav() {
     useEffect(() => {
 
         setPage(location.pathname);
-        setOrderLength(JSON.parse(sessionStorage.getItem("order")).length);
+        
+        const order = sessionStorage.getItem("order");
+        if (order && order.length > 0) {
+            setOrderLength(JSON.parse(order).length);
+        }
+
         function handleResize() {
             const newScreenWidth = window.innerWidth;
             setScreenWidth(newScreenWidth);
