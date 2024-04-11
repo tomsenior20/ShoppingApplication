@@ -42,11 +42,11 @@ export default function App() {
       return endDate > currentDate;
     });
 
-    for (let i = 0; i < filterList.length; i += chunkSize) {
+      for (let i = 0; i < filterList.length; i += chunkSize) {
       rows.push(
         <div className='products row w-100' key={i}> 
           {filterList.slice(i, i + chunkSize).map((item,key) => (
-          <Card className='productComingUpContainer col-12 col-lg-3' key={key}>
+          <Card className='productComingUpContainer col-12 col-md-12 col-lg-3' key={key}>
             <div className='d-flex flex-column h-100'>
               <CardHeader className='productNameSubHeader' title={item.whatsNewTitle}></CardHeader>
               <CardContent className='productNameText my-2'>
@@ -92,7 +92,7 @@ export default function App() {
       </div>
       {/* Product Container */}
       <div className='productsContainer'>
-        {renderRowsOfItems()}
+        {renderRowsOfItems().length > 0 ? renderRowsOfItems() : <p>No New News</p>}
       </div>
       <div className='shoppingcartNavContainer py-4 px-2 mx-2 my-4 d-flex flex-row justify-content-center align-items-center'>
         <div className='buttonTextContainer d-flex flex-column justify-content-center align-items-center m-3 p-4'>
