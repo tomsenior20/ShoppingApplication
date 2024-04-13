@@ -45,13 +45,6 @@ nav{
     -moz-text-decoration-color: red;
 }
 
-@media screen and (max-width:500px) {
-    .navigationTitleContainer, .navigationTitleContainer{
-        width:50%;
-    }
-}
-
-
 .basketIconContainer{
     position: relative;
 }
@@ -71,4 +64,49 @@ nav{
     -moz-border-radius: 50% !important;
     -ms-border-radius: 50% !important;
     -o-border-radius: 50% !important;
+}
+
+
+/* Hamburger Menu Styling  */
+
+
+/* Media Queries CSS */
+@media screen and (max-width:700px) {
+    .NavigationBrandTitle{
+        font-size: 1rem !important;
+    }
+    .navigationTitleContainer {
+        width: 20%;
+    }
+
+    .navigationLinkContainer {
+        width: 80%;
+        position: relative;
+        justify-content: space-between;
+    }
+    .navigationLinkContainer a {
+        font-size: 16px !important;
+    }
+
+    .navigationLinkContainer a:active{
+        text-decoration: underline;
+        text-underline-position: under;
+        text-decoration: underline;
+        text-decoration-color: red;
+        -moz-text-decoration-color: red;
+    }
+
+    .HamburgerMenuIcon, .hamburger-react{
+        position: absolute !important;
+        top: -3px;
+        right:-15px !important;
+    }
+    .mobile-menu{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        position: absolute !important;
+        justify-content: space-evenly;
+        left:-10px !important;
+    }
 }

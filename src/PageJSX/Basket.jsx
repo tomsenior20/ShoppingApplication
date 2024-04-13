@@ -33,25 +33,25 @@ export default function Basket() {
                 <Typography variant="h3" className='p-2 my-4 my-2 text-center basketTitleHeader'>Basket</Typography>
                 <Typography variant="h4" className='my-3 p-3 basketTitleSubHeader text-center'>Below Are items added to your basket:</Typography>
             </div>
-            <div className='p-3 my-5 basketParentContainer'>
+            <div className='p-3 basketParentContainer'>
             <TableContainer className="basketContainer p-2">
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell className='text-center'>Product Name: </TableCell>
-                            <TableCell className='text-center'>Product Description: </TableCell>
-                            <TableCell className='text-center'>Price: </TableCell>
-                            <TableCell className='text-center'>Remove Item: </TableCell>
+                            <TableCell className='text-center basketTableHeader'>Product Name: </TableCell>
+                            <TableCell className='text-center basketTableHeader'>Product Description: </TableCell>
+                            <TableCell className='text-center basketTableHeader'>Price: </TableCell>
+                            <TableCell className='text-center basketTableHeader'>Remove Item: </TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {currentOrder.length > 0 ? ( 
                             currentOrder.map((item,index) => (
                             <TableRow key={index}>
-                                <TableCell className='text-center'>{item.Name}</TableCell>
-                                <TableCell className='text-center'>{item.Description}</TableCell>
-                                <TableCell className='text-center'>£{item.Price}</TableCell>
-                                <TableCell className='text-center'>
+                                <TableCell className='text-center basketTableContent'>{item.Name}</TableCell>
+                                <TableCell className='text-center basketTableContent'>{item.Description}</TableCell>
+                                <TableCell className='text-center basketTableContent'>£{item.Price}</TableCell>
+                                <TableCell className='text-center basketTableContent'>
                                     <Button onClick={(e) => removeFromBasket(e,item)}>
                                         {<DeleteIcon />}
                                     </Button>

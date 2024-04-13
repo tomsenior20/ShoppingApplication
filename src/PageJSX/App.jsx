@@ -92,7 +92,7 @@ export default function App() {
       </div>
       {/* Product Container */}
       <div className='productsContainer'>
-        {renderRowsOfItems().length > 0 ? renderRowsOfItems() : <p>No New News</p>}
+        {renderRowsOfItems().length > 0 ? renderRowsOfItems() : <p variant="h5 my-0z">No New News</p>}
       </div>
       <div className='shoppingcartNavContainer py-4 px-2 mx-2 my-4 d-flex flex-row justify-content-center align-items-center'>
         <div className='buttonTextContainer d-flex flex-column justify-content-center align-items-center m-3 p-4'>
