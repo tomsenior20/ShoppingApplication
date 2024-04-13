@@ -73,9 +73,15 @@ export default function Nav() {
                         <Hamburger className="HamburgerMenuIcon" toggled={isOpen} toggle={toggleMenu} />
                         {isOpen && (
                             <div className="mobile-menu">
-                                <Link to="/" className="menu-item" onClick={toggleMenu}>Home</Link>
-                                <Link to="/about" className="menu-item" onClick={toggleMenu}>About</Link>
-                                <Link to="/shop" className="menu-item" onClick={toggleMenu}>Shop</Link>
+                                {page !== "/" && (
+                                    <Link to="/" className="menu-item" onClick={toggleMenu} >Home</Link>
+                                )}
+                                {page !== "/about" && (
+                                    <Link to="/about" className="menu-item" onClick={toggleMenu}>About</Link>
+                                )}
+                                {page !== "/shop" && (
+                                    <Link to="/shop" className="menu-item" onClick={toggleMenu}>Shop</Link>
+                                )}
                                 <Link to="/basket" className="menu-item" onClick={toggleMenu}>Basket</Link>
                             </div>
                         )}

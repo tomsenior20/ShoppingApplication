@@ -82,11 +82,20 @@ nav{
     .navigationLinkContainer {
         width: 80%;
         position: relative;
-        justify-content: space-between;
     }
     .navigationLinkContainer a {
         font-size: 16px !important;
+        margin: 0 5px;
+        line-height: 2.5;
     }
+    .navigationLinkContainer a:hover{
+        text-decoration: underline;
+        text-underline-position: under;
+        text-decoration-line: underline;
+        text-decoration-color: red;
+        -moz-text-decoration-line: underline;
+        -moz-text-decoration-color: red;
+}
 
     .navigationLinkContainer a:active{
         text-decoration: underline;
@@ -99,14 +108,15 @@ nav{
     .HamburgerMenuIcon, .hamburger-react{
         position: absolute !important;
         top: -3px;
-        right:-15px !important;
+        right:-10px !important;
+        padding: 1rem;
     }
     .mobile-menu{
-        width: 100%;
+        width: 90%;
         display: flex;
+        justify-content: space-evenly;
         flex-direction: row;
         position: absolute !important;
-        justify-content: space-evenly;
-        left:-10px !important;
+        left:-8px !important;
     }
 }
