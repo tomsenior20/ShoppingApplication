@@ -119,3 +119,11 @@ nav{
         left:-8px !important;
     }
 }
+
+@media screen and (max-width:700px) {
+    .BasketNumberContainer{
+        top:-10px  !important;
+        right: -18px !important;
+        height:25px !important;
+    }
+}

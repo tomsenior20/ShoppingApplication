@@ -82,7 +82,12 @@ export default function Nav() {
                                 {page !== "/shop" && (
                                     <Link to="/shop" className="menu-item" onClick={toggleMenu}>Shop</Link>
                                 )}
-                                <Link to="/basket" className="menu-item" onClick={toggleMenu}>Basket</Link>
+                                <Link to="/basket" className="menu-item" onClick={toggleMenu}>
+                                        <div class="basketIconContainer">
+                                            <ShoppingBasketIcon className='mx-2'/>
+                                            <div className='m-1 BasketNumberContainer' id="orderLengthNumber">{orderLength}</div>
+                                        </div>
+                                </Link>
                             </div>
                         )}
                     </>
