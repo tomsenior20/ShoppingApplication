@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 app.use(cors());
 
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`Node Server is running on port ${port}`);
 });
 
 // Create MySQL Connection to My DB

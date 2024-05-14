@@ -148,6 +148,9 @@
 }
 
 @media screen and (max-width:700px) {
+  .products,.productComingUpContainer{
+    padding: 0 !important;
+  }
   .subHeaderContainer,.headerTitleContainer {
       padding: 0 !important;
   }

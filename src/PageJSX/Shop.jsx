@@ -53,7 +53,7 @@ export default function Shop() {
             <Nav/>
             <div className='welcomeShopContainer d-flex flex-column justify-content-around px-3 py-2'>
                 <Typography variant="h3" className='welcomeHeader p-4 my-4 text-center'>Welcome To The Shop</Typography>
-                <Typography paragraph className='welcomeSubHeader my-3 mx-5 py-4 px-4'>
+                <Typography paragraph className='welcomeSubHeader my-3 text-center py-4 px-4'>
                     Add Items to basket below, which can be viewed by the basket page. Each item will be able to add it to a basket, for checking out purposes. 
                     So Why not start shopping?
                 </Typography>
@@ -63,23 +63,26 @@ export default function Shop() {
                     <Typography variant='h4' className='ProductCardHeader my-4 text-center p-3'>Below Are the Avaliable Products</Typography>
                 </div>
                 <div className='productContainer my-3 p-3 d-flex flex-row justify-content-center align-items-center'>
-                    {products.filter((canShow) => canShow.showProduct === 1).map((item,key) => (
-                    <Card key={key} className='ProductCard m-5 p-2 d-flex flex-column justify-content-between'>
-                        <CardHeader className='p-1 productNames' title={item.ProductName} />
-                        <CardContent className='p-1 flex-grow-1 d-flex justify-content-between flex-column'>
-                            <Typography variant='body1 productDesc' className="my-3">Description: {item.ProductDescription}</Typography>
-                            <Typography variant='body1' className="my-2" value={item.ProductPrice}>Price: £{item.ProductPrice}</Typography>
-                        </CardContent>
-                <div className='p-2 d-flex justify-content-start'>
-                    <Button variant="contained"
-                    className='AddButton'
-                    onClick={() => AddProduct(item)} 
-                    endIcon={<AddIcon />}>
-                    Add
-                    </Button>
-                </div>
-            </Card>
-                ))}
+
+                    {products.length > 0 ? (
+                        products.filter((canShow) => canShow.showProduct === 1).map((item,key) => (
+                        <Card key={key} className='ProductCard m-5 p-2 d-flex flex-column justify-content-between'>
+                            <CardHeader className='p-1 productNames' title={item.ProductName} />
+                            <CardContent className='p-1 flex-grow-1 d-flex justify-content-between flex-column'>
+                                <Typography variant='body1 productDesc' className="my-3">Description: {item.ProductDescription}</Typography>
+                                <Typography variant='body1' className="my-2" value={item.ProductPrice}>Price: £{item.ProductPrice}</Typography>
+                            </CardContent>
+                        <div className='p-2 d-flex justify-content-start'>
+                            <Button variant="contained" className='AddButton' onClick={() => AddProduct(item)} endIcon={<AddIcon />}>
+                                Add
+                            </Button>
+                            </div>
+                        </Card> ))
+                    ) : (
+                        <div>
+                            <h4 variant="h4" className='my-0'>No Available Products</h4>
+                        </div>
+                    )}
                 </div>
             </div>
             <Footer />
