@@ -14,13 +14,17 @@ export default function App() {
   useEffect(() =>{
     fetchWhatsNewData();
   },[]);
-
+  
   function fetchWhatsNewData(){
-    fetch('http://localhost:3010/whatsnew')
+    // Gets Either the IP and LocalHost
+    const hostName = window.location.hostname;
+    // server is running on port 3010
+    const serverPort = 3010; 
+    const url = `http://${hostName}:${serverPort}/whatsnew`;
+
+    fetch(url)
     .then((response) => {
-      if(!response.ok){
-        console.log("Network is not okay");
-      }
+      if(!response.ok){ console.log("Network is not okay"); }
       return response.json();
     })
     .then((data) => { 
@@ -51,7 +55,7 @@ export default function App() {
               <CardHeader className='productNameSubHeader' title={item.whatsNewTitle}></CardHeader>
               <CardContent className='productNameText my-2'>
               <Typography paragraph>
-                {item.whatsNewDescription}
+                  {item.whatsNewDescription}
               </Typography>
               </CardContent>
             <div className='mt-auto'> {/* This div ensures "Expires" is positioned at the bottom */}
@@ -92,7 +96,7 @@ export default function App() {
       </div>
       {/* Product Container */}
       <div className='productsContainer'>
-        {renderRowsOfItems().length > 0 ? renderRowsOfItems() : <div><h4 variant="h5" className='my-0'>No New News</h4></div>}
+        {renderRowsOfItems().length > 0 ? renderRowsOfItems() : <div className='nonewnewsContainer'><h4 variant="h5" className='my-0'>No New News</h4></div>}
       </div>
       <div className='shoppingcartNavContainer py-4 px-2 mx-2 my-4 d-flex flex-row justify-content-center align-items-center'>
         <div className='buttonTextContainer d-flex flex-column justify-content-center align-items-center m-3 p-4'>

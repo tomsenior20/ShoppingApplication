@@ -1,17 +1,19 @@
 import express from "express";
 import MySQL from 'mysql';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
 const app = express();
 const port = 3010;
 
 app.get("/", (req, res) => {
+    dotenv.config();
     res.send("Welcome To My Server")
 });
 
 app.use(cors());
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`Node Server is running on port ${port}`);
 });
 

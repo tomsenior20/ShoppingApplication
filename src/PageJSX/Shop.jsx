@@ -20,9 +20,15 @@ export default function Shop() {
 
     useEffect(()=> {
         fetchProducts();
-    }, [])
+    },[])
+
     function fetchProducts(){
-        fetch("http://localhost:3010/getProducts")
+        // Gets Either the IP and LocalHost
+        const hostName = window.location.hostname;
+        // server is running on port 3010
+        const serverPort = 3010; 
+        const url = `http://${hostName}:${serverPort}/getProducts`;
+        fetch(url)
         .then((response) => {
             if(!response.ok){
                 console.log("Network is not okay");
@@ -42,10 +48,9 @@ export default function Shop() {
         if(sessionStorage.getItem("order")){
             var exisitingOrder = JSON.parse(sessionStorage.getItem("order"));
             exisitingOrder.push(order);
-            sessionStorage.setItem("order", JSON.stringify(order));
-        } else{ 
-            sessionStorage.setItem("order", JSON.stringify(order));
         }
+
+        sessionStorage.setItem("order", JSON.stringify(order));
         window.location.reload();
     }
     return(
