@@ -107,7 +107,6 @@ nav{
 
     .HamburgerMenuIcon, .hamburger-react{
         position: absolute !important;
-        top: -3px;
         right:-10px !important;
         padding: 1rem;
     }
