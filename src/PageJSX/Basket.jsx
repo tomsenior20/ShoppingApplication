@@ -35,7 +35,7 @@ export default function Basket() {
             </div>
             <div className='p-3 basketParentContainer'>
             <TableContainer className="basketContainer p-2">
-                <Table>
+                <Table className='basketTable'>
                     <TableHead>
                         <TableRow>
                             <TableCell className='text-center basketTableHeader'>Product Name: </TableCell>
@@ -48,19 +48,21 @@ export default function Basket() {
                         {currentOrder.length > 0 ? ( 
                             currentOrder.map((item,index) => (
                             <TableRow key={index}>
-                                <TableCell className='text-center basketTableContent'>{item.Name}</TableCell>
-                                <TableCell className='text-center basketTableContent'>{item.Description}</TableCell>
-                                <TableCell className='text-center basketTableContent'>£{item.Price}</TableCell>
-                                <TableCell className='text-center basketTableContent'>
+                                <TableCell className='basketTableContent'>{item.Name}</TableCell>
+                                <TableCell className='basketTableContent'>{item.Description}</TableCell>
+                                <TableCell className='basketTableContent'>£{item.Price}</TableCell>
+                                <TableCell className='basketTableContent'>
                                     <Button onClick={(e) => removeFromBasket(e,item)}>
                                         {<DeleteIcon />}
                                     </Button>
                                 </TableCell>
                             </TableRow>
                         ))) :
-                            <TableRow className='text-center p-1 my-2'>
-                                No Items are in basket
-                            </TableRow>
+                                <TableRow>
+                                    <TableCell className='noitemrow'>
+                                        No Items are in basket
+                                    </TableCell>
+                                </TableRow>
                         }
                     </TableBody>
                 </Table>              
