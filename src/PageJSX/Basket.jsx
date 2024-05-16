@@ -59,7 +59,7 @@ export default function Basket() {
                                 <TableCell className='basketTableContent'>{item.Name}</TableCell>
                                 <TableCell className='basketTableContent'>{item.Description}</TableCell>
                                 <TableCell className='basketTableContent'>£{item.Price}</TableCell>
-                                <TableCell className='basketTableContent'>
+                                <TableCell className='basketButtonTableContent'>
                                     <Button onClick={(e) => removeFromBasket(e,item)}>
                                         {<DeleteIcon />}
                                     </Button>

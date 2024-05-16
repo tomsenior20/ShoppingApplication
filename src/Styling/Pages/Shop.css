@@ -11,7 +11,7 @@
 
 .ProductCard{
     position: relative;
-    background-color: rgba(239, 238, 238, 0.9)!important;
+    background-color: rgba(245, 245, 246, 0.9)!important;
     box-shadow: 2px 3px 4px 5px rgba(222, 221, 221, 0.4) !important;
     width: 25%;
     min-height: 300px;
@@ -31,7 +31,15 @@
 }
 
 .AddButton{
-    width:75%
+    width:75%;
+    background: rgb(140, 139, 139) !important;
+    color:white;
+    margin:auto !important;
+}
+
+.AddButton:hover{
+    background:darkslategray !important;
+    color:white;
 }
 
 .productNames{
@@ -51,6 +59,7 @@
     line-height: 1.5 !important;
     font-weight: 400 !important;
     letter-spacing:0px !important;
+    padding: 1rem !important;
 }
 
 .productPrice {
@@ -60,6 +69,7 @@
     font-weight: 400 !important;
     letter-spacing: 0px !important;
     margin:0 1px;
+    padding:1rem!important;
 }
 
 @media screen and (max-width:700px) {

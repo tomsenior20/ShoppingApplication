@@ -58,7 +58,7 @@ export default function Shop() {
             <Nav/>
             <div className='welcomeShopContainer d-flex flex-column justify-content-around px-3 py-2'>
                 <Typography variant="h3" className='welcomeHeader p-4 my-4 text-center'>Welcome To The Shop</Typography>
-                <Typography paragraph className='welcomeSubHeader my-3 text-center py-4 px-4'>
+                <Typography paragraph className='welcomeSubHeader my-4 text-center py-4 px-4'>
                     Add Items to basket below, which can be viewed by the basket page. Each item will be able to add it to a basket, for checking out purposes. 
                     So Why not start shopping?
                 </Typography>

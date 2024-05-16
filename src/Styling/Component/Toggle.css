@@ -4,6 +4,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgb(228, 227, 227);
+    box-shadow: rgba(222, 221, 221, 0.9);
     width: 25%;
     height: 30%;
     z-index: 9999;
