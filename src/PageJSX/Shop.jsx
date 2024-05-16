@@ -75,10 +75,10 @@ export default function Shop() {
                             <CardHeader className='p-1 productNames' title={item.ProductName} />
                             <CardContent className='p-1 flex-grow-1 d-flex justify-content-between flex-column'>
                                 <Typography variant='body1 productDesc' className="my-3">Description: {item.ProductDescription}</Typography>
-                                <Typography variant='body1' className="my-2" value={item.ProductPrice}>Price: £{item.ProductPrice}</Typography>
+                                <Typography variant='body1'  className="my-2 productPrice" value={item.ProductPrice}>Price: £{item.ProductPrice}</Typography>
                             </CardContent>
                         <div className='p-2 d-flex justify-content-start'>
-                            <Button variant="contained" className='AddButton' onClick={() => AddProduct(item)} endIcon={<AddIcon />}>
+                            <Button variant="contained" className='AddButton btn' color="success" onClick={() => AddProduct(item)} endIcon={<AddIcon/>}>
                                 Add
                             </Button>
                             </div>
